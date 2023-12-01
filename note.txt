@@ -1,0 +1,28 @@
+- Resilience4j kütüphanesi, hata toleranslı ve dayanıklı uygulamaların geliştirilmesine yardımcı olur.
+
+- Resilience4j kütüphanesi, hata toleranslı ve dayanıklı uygulamaların geliştirilmesine yardımcı olur.
+- Kütüphanenin modülleri arasında Circuit Breaker, Rate Limiter, Time Limiter, Retry ve Bulkhead gibi özellikler
+bulunur.
+
+- Circuit Breaker, bir servisin başka bir servisi çağırdığında hata alması durumunda, default bir cevap döndürerek
+istekleri durdurur.
+- Rate Limiter, belirli bir süre içinde belirli sayıda isteği kabul eder ve geri kalanları reddeder
+
+bulkhead-> adı verilen bir yöntemle aynı anda belirli bir sayıda isteğin kabul edildiği ve geri kalan isteklere
+cevap verilmez
+
+Time Limiter Ayrıca, belirli bir parametreye göre limitli isteklerin yapılabildiği ve zaman sınırlaması konulabilen bir yapı olduğu ifade ediliyor
+
+. Retry modülü ise belirli bir hata durumunda tekrar deneme yapmayı sağlar
+
+
+Bunun yanı sıra, bulkhead adı verilen bir yöntemle aynı anda belirli bir sayıda isteğin kabul edildiği ve geri kalan isteklere
+cevap verilmediği anlatılıyor. 
+
+resilience4j kütüphanesinin rate limiter, time limiter ve bulkhead gibi
+özelliklerinin kullanılabildiği ve isteklerin kontrol edilebildiği belirtiliyor
+
+ Bulkhead, rate limit ile benzer bir kavramdır ancak zaman aralığına bağlı olarak değil,
+eş zamanlı çalışan istek sayısını düzenler
+
+Retry gibi yapıları kafka ve rabbitMq kullanmamız gerektiği..
