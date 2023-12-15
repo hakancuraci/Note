@@ -1,28 +1,13 @@
-- Resilience4j kütüphanesi, hata toleranslı ve dayanıklı uygulamaların geliştirilmesine yardımcı olur.
+**Notlar***
 
-- Resilience4j kütüphanesi, hata toleranslı ve dayanıklı uygulamaların geliştirilmesine yardımcı olur.
-- Kütüphanenin modülleri arasında Circuit Breaker, Rate Limiter, Time Limiter, Retry ve Bulkhead gibi özellikler
-bulunur.
+Core DBA sayfaları birçok rapor içerdiği ve bunların çoğu DBA adminlerin hazırladığı hazır raporlar. Bunların bazıları sadece onları igilendirsede bazı sorunları çözmek için bizim işimize yarayabilir.
 
-- Circuit Breaker, bir servisin başka bir servisi çağırdığında hata alması durumunda, default bir cevap döndürerek
-istekleri durdurur.
-- Rate Limiter, belirli bir süre içinde belirli sayıda isteği kabul eder ve geri kalanları reddeder
+Ek olarak SQL'lerin performans metrikleri gözleyebiliriz. SQL id ler ile sql textleri görüntüleyebiliriz.
 
-bulkhead-> adı verilen bir yöntemle aynı anda belirli bir sayıda isteğin kabul edildiği ve geri kalan isteklere
-cevap verilmez
+Reverse işlemler için javada bir companentten konuştuk. Kütüphane statik değil, dinamik olarak kullanabiliyoruz.  istediğiniz space veya uygulama için kendi tablolarınızı oluşturmanız gerekiyor. Rollback işlemleri bu tablo üzerinden ilerliyor. Bu event tablosu bir süre sonra şiseceğinde dolayı bazı kayıtların silinmesi veya arşivlenmesi gerekiyormuş.
 
-Time Limiter Ayrıca, belirli bir parametreye göre limitli isteklerin yapılabildiği ve zaman sınırlaması konulabilen bir yapı olduğu ifade ediliyor
+Ek olarak Config server da yapılan bazı değişiklikler dc2 ye yansımıyor olabiliyormuş. Bu tarz bi bug yakalanmış. Configde bir değişiklik yaptığımızda değerin değiştiğine emin olursak daha sağlıklı olacak gibi görünüyor.
 
-. Retry modülü ise belirli bir hata durumunda tekrar deneme yapmayı sağlar
+Yük testlerinde jmeter'ı uygulamasını kullanabiliriz. Kapsamlı baya özelliği olan bir uygulama.Request'lerde dinamik değişkenler vs. oluşturabiliyoruz. Çok kısa jmeter'ı konuştuk..
 
-
-Bunun yanı sıra, bulkhead adı verilen bir yöntemle aynı anda belirli bir sayıda isteğin kabul edildiği ve geri kalan isteklere
-cevap verilmediği anlatılıyor. 
-
-resilience4j kütüphanesinin rate limiter, time limiter ve bulkhead gibi
-özelliklerinin kullanılabildiği ve isteklerin kontrol edilebildiği belirtiliyor
-
- Bulkhead, rate limit ile benzer bir kavramdır ancak zaman aralığına bağlı olarak değil,
-eş zamanlı çalışan istek sayısını düzenler
-
-Retry gibi yapıları kafka ve rabbitMq kullanmamız gerektiği..
+Sadece bilgi için ekliyorum. Spring'in bizde 3.15 versiyonunu desteklemeye başlamışız. Yeni oluşturulan spring projelerini 3.15 açabiliyoruz. Sadece bu versiyonda yapısal değişiklikler olduğu için S*** dikkat edilmesi gerektiği belirtti.
